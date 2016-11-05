@@ -1,28 +1,29 @@
 package lab2_orga;
 
 public class Linea_de_control {
-	private int activo;
-	private static Linea_de_control instance = null;
-	protected Linea_de_control() {
-		// Exists only to defeat instantiation.
-		this.activo = 0;
-	}
-	public static Linea_de_control getInstance() {
-		if(instance == null) {
-			instance = new Linea_de_control();
-		}
-		return instance;
+	private Integer activa;
+		
+	public Linea_de_control(){
+		this.activa = 0;
 	}
 	
-	public int getActivo(){
-		return this.activo;
+	public boolean estado(){
+		if (this.activa == 1){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public Integer getActivo(){
+		return this.activa;
 	}
 	
 	public void activar(){
-		this.activo = 1;
+		this.activa = 1;
 	}
 	
 	public void desactivar(){
-		this.activo = 0;
+		this.activa = 0;
 	}
 }
